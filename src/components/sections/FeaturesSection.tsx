@@ -1,26 +1,29 @@
 import { Gauge, LayoutGrid, Sparkles } from "lucide-react";
 import Reveal from "@/components/animations/Reveal";
 import Container from "@/components/ui/Container";
-import { FeaturesModule } from "@/types/home";
+import { FeatureCard, FeaturesModule } from "@/types/home";
 
-const defaultItems = [
+const defaultItems: FeatureCard[] = [
   {
+    _key: "feature-1",
     title: "App Router архитектура",
     description:
       "Чистая структура проекта на Next.js с разделением UI по независимым секциям.",
-    icon: LayoutGrid
+    iconName: "LayoutGrid"
   },
   {
+    _key: "feature-2",
     title: "Плавная адаптивность",
     description:
       "Компоненты масштабируются через clamp, fluid spacing и брейкпоинты без резких скачков.",
-    icon: Gauge
+    iconName: "Gauge"
   },
   {
+    _key: "feature-3",
     title: "Готовность к развитию",
     description:
       "Токены цвета и типографика вынесены в Tailwind конфиг для легких изменений.",
-    icon: Sparkles
+    iconName: "Sparkles"
   }
 ];
 
@@ -52,10 +55,7 @@ export default function FeaturesSection({ data }: FeaturesSectionProps) {
         </Reveal>
         <div className="grid fluid-section-gap md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
           {items.map((item, index) => {
-            const Icon =
-              "icon" in item && item.icon
-                ? item.icon
-                : iconMap[(item.iconName as keyof typeof iconMap) || "Sparkles"] || Sparkles;
+            const Icon = iconMap[item.iconName as keyof typeof iconMap] || Sparkles;
 
             return (
               <Reveal
