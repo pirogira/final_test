@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  min-height: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  @apply bg-ink-50 text-ink-900 antialiased;
+}
+
+.section-space {
+  @apply py-16 md:py-20 lg:py-24;
+}
+
+.fluid-title {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.1;
+}
+
+.fluid-subtitle {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+}
+
+.fluid-section-gap {
+  gap: clamp(1rem, 2.2vw, 2rem);
+}
