@@ -3,9 +3,8 @@ import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import FooterSection from "@/components/sections/FooterSection";
 import HeroSection from "@/components/sections/HeroSection";
-import { sanityFetch } from "@/sanity/lib/client";
-import { homePageQuery } from "@/sanity/lib/queries";
-import { HomeModule, HomePageData } from "@/types/home";
+import { homeStaticModules } from "@/content/homeStatic";
+import { HomeModule } from "@/types/home";
 
 function renderModule(module: HomeModule) {
   switch (module._type) {
@@ -24,21 +23,10 @@ function renderModule(module: HomeModule) {
   }
 }
 
-export default async function HomePage() {
-  const data = await sanityFetch<HomePageData>({ query: homePageQuery });
-  const modules = data?.modules?.length
-    ? data.modules
-    : ([
-        { _type: "heroModule", _key: "hero-fallback" },
-        { _type: "featuresModule", _key: "features-fallback" },
-        { _type: "contentModule", _key: "content-fallback" },
-        { _type: "ctaModule", _key: "cta-fallback" },
-        { _type: "footerModule", _key: "footer-fallback" }
-      ] as HomeModule[]);
-
+export default function HomePage() {
   return (
     <main className="overflow-x-clip">
-      {modules.map((module) => renderModule(module))}
+      {homeStaticModules.map((module) => renderModule(module))}
     </main>
   );
 }

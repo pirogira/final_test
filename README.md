@@ -1,6 +1,6 @@
 # Modern Next.js Landing
 
-Современный лендинг на Next.js (App Router) с адаптивной версткой, анимациями и управлением контентом через Headless CMS.
+Современный лендинг на Next.js (App Router) с адаптивной версткой и анимациями.
 
 ## Технологический стек
 
@@ -9,8 +9,6 @@
 - Tailwind CSS
 - Framer Motion
 - Lucide React
-- Sanity.io (Headless CMS)
-- GROQ (`next-sanity`)
 
 ## Запуск проекта
 
@@ -35,15 +33,15 @@ NEXT_PUBLIC_SANITY_API_VERSION=2025-01-01
 npm run dev
 ```
 
-5. Откройте приложение:
-- сайт: `http://localhost:3000`
-- админка Sanity Studio: `http://localhost:3000/studio`
+5. Откройте приложение: `http://localhost:3000`
 
-## CMS (Sanity) — управление Home
+## GitHub Pages
 
-- В админке откройте документ `Home`.
-- Заполните тексты, изображения и `Meta Description (SEO)`.
-- Редактируйте порядок блоков в массиве `Modules` — порядок автоматически применяется на фронтенде.
+- Проект переведен в статический режим (`output: "export"`).
+- При пуше в `main` деплой запускается автоматически через GitHub Actions.
+- Workflow: `.github/workflows/deploy-gh-pages.yml`
+- Для репозитория `final_test` сайт публикуется по адресу:
+  `https://pirogira.github.io/final_test/`
 
 ## GitHub доступ
 
