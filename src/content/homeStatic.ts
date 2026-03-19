@@ -1,8 +1,9 @@
 import { HomeModule } from "@/types/home";
 
 export const homeStaticMeta = {
-  title: "Modern Next Landing",
-  description: "Responsive landing page built with Next.js and Tailwind CSS"
+  title: "Миграционные услуги | МиграПро",
+  description:
+    "Миграционные услуги в Москве и Московской области: оформление РВП, ВНЖ, гражданства РФ и юридическая поддержка."
 };
 
 export const homeStaticModules: HomeModule[] = [

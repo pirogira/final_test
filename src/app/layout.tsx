@@ -3,7 +3,7 @@ import { homeStaticMeta } from "@/content/homeStatic";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: homeStaticMeta.title,
+  title: "Миграционные услуги | МиграПро",
   description: homeStaticMeta.description
 };
 
